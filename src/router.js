@@ -19,5 +19,15 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
+    {
+      path: '/users',
+      name: 'users',
+      component: () => import('./views/UserListView.vue'),
+    },
+    {
+      path: '/users/create',
+      name: 'users-create',
+      component: () => import('./views/UserCreateView.vue'),
+    },
   ],
 });

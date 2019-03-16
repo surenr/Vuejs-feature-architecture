@@ -1,8 +1,11 @@
 import UserCreate from './components/UserCreate.vue';
+import UsersList from './components/UserList.vue';
+
 import UserCreateStore from './store/user';
 
 const components = {
   UserCreate,
+  UsersList,
   // Add all additional components below
 };
 const storeModules = {

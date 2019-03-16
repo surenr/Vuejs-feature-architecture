@@ -25,20 +25,6 @@
         </div>
       </div>
     </div>
-    <div class="row">&nbsp;</div>
-    <div class="row">
-      <h1>Users List</h1>
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-        </tr>
-        <tr v-for="user in getAllUsers" :key="user.id">
-          <td>{{user.name}}</td>
-          <td>{{user.description}}</td>
-        </tr>
-      </table>
-    </div>
   </div>
 </template>
 
@@ -53,18 +39,10 @@ export default {
       },
     };
   },
-  computed: {
-    getAllUsers() {
-      return this.$store.getters['UserCreate/getUserList'] || [];
-    },
-  },
   methods: {
     submitForm() {
       this.$store.dispatch('UserCreate/addUser', { name: this.form.name, description: this.form.description });
     },
-  },
-  created() {
-    this.$store.dispatch('UserCreate/getAllUsers');
   },
 };
 </script>
