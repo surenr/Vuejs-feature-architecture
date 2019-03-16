@@ -1,6 +1,6 @@
 <template>
   <div class="userCreateView">
-    <UserCreate />
+    <UserCreate @newUserAdded="handleNewUserAdded" />
   </div>
 </template>
 
@@ -9,5 +9,11 @@
 
 export default {
   name: 'userCreateView',
+  methods: {
+    handleNewUserAdded() {
+      console.log('New User Added Emmitted and Hanlded');
+      this.$router.push({ name: 'users' });
+    },
+  },
 };
 </script>

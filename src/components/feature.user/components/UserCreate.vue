@@ -42,6 +42,7 @@ export default {
   methods: {
     submitForm() {
       this.$store.dispatch('UserCreate/addUser', { name: this.form.name, description: this.form.description });
+      this.$emit('newUserAdded');
     },
   },
 };
