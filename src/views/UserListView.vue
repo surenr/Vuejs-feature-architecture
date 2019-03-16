@@ -1,7 +1,7 @@
 <template>
   <div class="userListView">
     <p>Please <router-link to="/users/create">Click Here</router-link> to create new users </p>
-    <UsersList />
+    <UsersList :routerBase="'/users/edit'" />
   </div>
 </template>
 

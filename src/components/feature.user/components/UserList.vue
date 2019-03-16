@@ -6,10 +6,12 @@
         <tr>
           <th>Name</th>
           <th>Description</th>
+          <th>Actions</th>
         </tr>
         <tr v-for="user in getAllUsers" :key="user.id">
           <td>{{user.name}}</td>
           <td>{{user.description}}</td>
+          <td><router-link :to="routerBase + '/' + user.id">Edit</router-link></td>
         </tr>
       </table>
     </div>
@@ -19,6 +21,9 @@
 <script>
 export default {
   name: 'UsersList',
+  props: {
+    routerBase: String,
+  },
   computed: {
     getAllUsers() {
       return this.$store.getters['UserCreate/getUserList'] || [];

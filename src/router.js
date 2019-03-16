@@ -29,5 +29,11 @@ export default new Router({
       name: 'users-create',
       component: () => import('./views/UserCreateView.vue'),
     },
+    {
+      path: '/users/edit/:id',
+      name: 'users-edit',
+      component: () => import('./views/UserEditView.vue'),
+      props: true,
+    },
   ],
 });
